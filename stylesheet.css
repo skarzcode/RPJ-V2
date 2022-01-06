@@ -207,7 +207,7 @@ button:hover {
     position: absolute;
     top: 40%;
     left: 0%; 
-    font-size: 18px;
+    font-size: 14px;
     font-weight: bolder;
     -webkit-transform: rotate(-90deg);
     -moz-transform: rotate(-90deg); 
