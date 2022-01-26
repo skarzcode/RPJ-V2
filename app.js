@@ -6,6 +6,27 @@ const close = document.getElementById("close");
 const boxImg = document.querySelectorAll(".box-img");
 var galleryImg = ["galleryImg1.jpeg", "galleryImg2.jpeg", "galleryImg3.jpeg","galleryImg1.jpeg", "galleryImg2.jpeg", "galleryImg3.jpeg","galleryImg1.jpeg", "galleryImg2.jpeg","galleryImg2.jpeg", "galleryImg3.jpeg","galleryImg1.jpeg", "galleryImg2.jpeg"];
 var Content = document.getElementsByClassName("container__content")[0];
+const items = document.querySelectorAll('.accordion button');
+
+
+
+function toggleAccordion(){
+    const itemToggle = this.getAttribute('aria-expanded');
+
+    for (let i=0; i <items.length; i++){
+        items[i].setAttribute('aria-expanded', 'false')
+    }
+
+    if(itemToggle == 'false'){
+        this.setAttribute('aria-expanded', 'true');
+    }
+}
+
+items.forEach((item) => item.addEventListener('click', toggleAccordion))
+
+
+
+
 
 window.addEventListener("scroll", reveal);
 window.addEventListener("scroll", reveal2);
@@ -43,7 +64,7 @@ for (var i=0; i< reveals2.length; i++){
 }
 };
 
-console.log(galleryImg[0]);
+
 
 
 
@@ -64,7 +85,6 @@ images.forEach((image) => {
             
 });
 
-
 boxImg.forEach((img) => {
     img.addEventListener("click", () => {
         const modalSrc = modalImg.src;
@@ -77,7 +97,7 @@ boxImg.forEach((img) => {
 
 document.addEventListener("click", function(event){
     if(event.target.id == "Gallery_images"){
-        console.log("chiken dinner");
+       
     };
 });
 
